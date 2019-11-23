@@ -16,7 +16,7 @@ public class PaymentHandler {
     @Autowired
     private ApplicationContext applicationContext;
 
-    public static Map<Integer, Class<Payment>> paymentStrategyBeanMap = new ConcurrentHashMap<>();
+    static Map<Integer, Class<Payment>> paymentStrategyBeanMap = new ConcurrentHashMap<>();
 
     public Payment getPaymentStrategy(Integer paymentType) {
         Class<Payment> paymentClass = paymentStrategyBeanMap.get(paymentType);
